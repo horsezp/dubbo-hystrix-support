@@ -13,7 +13,8 @@ public class HystrixFilter implements Filter {
 
     @Override
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
-        DubboHystrixCommand command = new DubboHystrixCommand(invoker, invocation);
+    	System.out.println("here how many times it enter this service ");
+    	DubboHystrixCommand command = new DubboHystrixCommand(invoker, invocation);
         return command.execute();
     }
 
